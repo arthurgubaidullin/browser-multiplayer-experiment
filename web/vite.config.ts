@@ -5,5 +5,8 @@ import topLevelAwait from "vite-plugin-top-level-await";
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    proxy: { "/ws": "http://localhost:3000/ws" },
+  },
   plugins: [preact(), wasm(), topLevelAwait()],
 });
