@@ -9,8 +9,9 @@
     "preview": "vite preview --host"
   },
   "dependencies": {
-    "preact": "^10.26.5",
-    "@preact/signals": "^2.2.0"
+    "@automerge/automerge": "^2.2.9",
+    "@preact/signals": "^2.2.0",
+    "preact": "^10.26.5"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.10.1",
