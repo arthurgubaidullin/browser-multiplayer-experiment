@@ -1,0 +1,15 @@
+{
+  "name": "@browser-multiplayer-experiment/source",
+  "type": "module",
+  "workspaces": [],
+  "author": {
+    "name": "Artur Gubaidullin",
+    "url": "https://github.com/arthurgubaidullin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurgubaidullin/browser-multiplayer-experiment.git"
+  },
+  "private": true,
+  "packageManager": "npm@10.9.0"
+}
