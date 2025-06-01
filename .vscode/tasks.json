@@ -9,7 +9,7 @@
       "icon": { "id": "sparkle" },
       "group": {
         "kind": "build",
-        "isDefault": true
+        "isDefault": false
       },
       "presentation": {
         "echo": true,
@@ -19,6 +19,87 @@
         "showReuseMessage": true,
         "clear": true
       }
+    },
+    {
+      "label": "cargo: build",
+      "type": "shell",
+      "command": ["cargo", "build"],
+      "problemMatcher": ["$rustc"],
+      "icon": { "id": "gear" },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "cargo: test",
+      "type": "shell",
+      "command": ["cargo", "test"],
+      "problemMatcher": ["$rustc"],
+      "icon": { "id": "checklist" },
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "cargo: clippy",
+      "type": "shell",
+      "command": [
+        "cargo",
+        "clippy",
+        "--",
+        "-D",
+        "clippy::all",
+        "-D",
+        "clippy::pedantic",
+        "-W",
+        "clippy::nursery"
+      ],
+
+      "problemMatcher": ["$rustc"],
+      "icon": { "id": "check-all" },
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "all",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "dependsOn": [
+        "turbo: build test lint",
+        "cargo: build",
+        "cargo: test",
+        "cargo: clippy"
+      ]
     }
   ]
 }
