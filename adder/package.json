@@ -1,0 +1,17 @@
+{
+  "name": "@browser-multiplayer-experiment/adder",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  },
+  "scripts": {
+    "prebuild": "rm -rf *.tsbuildinfo dist",
+    "build": "tsc -p tsconfig-build.json",
+    "test": "vitest . --run",
+    "lint": "eslint ."
+  },
+  "private": true
+}

@@ -1,7 +1,9 @@
 {
   "name": "@browser-multiplayer-experiment/source",
   "type": "module",
-  "workspaces": [],
+  "workspaces": [
+    "adder"
+  ],
   "author": {
     "name": "Artur Gubaidullin",
     "url": "https://github.com/arthurgubaidullin"
