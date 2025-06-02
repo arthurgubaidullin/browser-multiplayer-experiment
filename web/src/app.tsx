@@ -8,7 +8,7 @@ export function App() {
     <div>
       <h1>Counter</h1>
 
-      <p>Value: {counter.value}</p>
+      <p>Value: {counter.value.value ?? "undefined"}</p>
 
       <button
         onClick={() => {
