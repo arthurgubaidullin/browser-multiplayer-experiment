@@ -6,7 +6,7 @@ on:
 
 jobs:
   build_and_test_and_lint:
-    name: Rust project - latest
+    name: Build & Test & Lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
