@@ -1,0 +1,21 @@
+name: Cargo CI
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build_and_test_and_lint:
+    name: Rust project - latest
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+      - run: cargo build --verbose
+      - run: cargo test --verbose
+      - run: cargo clippy --verbose -- -D clippy::all -D clippy::pedantic -W clippy::nursery
